@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dcument</title>
+</head>
+<body>
+    <script>
+
+    String.prototype.toJadenCase = function () {
+       
+            let splited = this.split(' ');
+            
+
+            let outputArray = [];
+
+
+            for (let i=0; i < splited.length; i++ ) {
+                
+                outputArray.push(splited[i].charAt(0).toUpperCase() + splited[i].slice(1));
+
+                
+
+            }
+           
+           return output =  outputArray.join(" ");
+
+
+        }
+
+upper("How can mirrors be real if our eyes aren't real");
+
+console.log(output);
+
+    </script>
+</body>
+</html>

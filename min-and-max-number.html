@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dcument</title>
+</head>
+<body>
+    <script>
+//let min, max;
+
+function highAndLow(numbers){
+    
+    numbers = numbers.split(' ');
+
+    numbers = numbers.sort(function(a, b) {
+    return a - b;
+    });
+
+    max = numbers.pop();
+    min = numbers.shift();
+   
+    
+      return max +" "+ min;
+   
+    
+
+   }
+
+
+
+
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+  /*  numbersWithCommas.sort(function(a, b) {
+    return a - b;
+    });
+
+    let min = sortedNumbers.shift();
+    let max = sortedNumbers.pop();
+    
+   console.log(max, min);
+
+   
+*/
+
+
+//numbers = numbers.replace(/\s/g, ', ');
+    </script>
+</body>
+</html>
