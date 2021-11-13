@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      
+           
+function isIsogram(str){
+
+        str = str.toLowerCase();
+        console.log(str.length);
+        let result = true;
+        for (let i=0; i < str.length;) {
+            let symbolSelected = str.charAt(i);
+            console.log(symbolSelected);
+            let strWithoutSelectedSymbol = str.replace(symbolSelected, '');
+            console.log(strWithoutSelectedSymbol);
+            result = strWithoutSelectedSymbol.includes(symbolSelected);
+            console.log(result);
+            if (result == true) {
+                result = false; 
+                break; 
+            } 
+            
+                                   
+            else { 
+                i++;
+                result = true; 
+                               
+            }
+
+        }
+
+        return result;
+        
+        console.log(result);
+        
+                   
+    }
+
+    let output = isIsogram('moOse');
+    
+    console.log(output);
+
+   
+
+
+    
+
+
+
+          /*  const paragraph = 'thet.';
+
+
+            let symbol = paragraph.charAt(0);
+            
+            const found = paragraph.replace(symbol, '');
+
+           const result = found.includes("t");
+
+            console.log(result);*/
+
+
+
+
+// expected output: Array ["T", "I"]
+
+
+
+// expected output: "fox"
+
+
+    </script>
+</body>
+</html>

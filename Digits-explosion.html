@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//explode("312"); // => "333122"
+//explode("102269"); // => "12222666666999999999"
+
+
+//let output;
+
+function explode(s) {
+  
+   let splittedArray = s.split('') ;  //разбили строку на посимвольный массив
+   let str = '';
+     
+    for (let i = 0; i < s.length; i++ ) {
+
+        let numberOfDigits = splittedArray[i]; //определяем кол-во цифр для каждой цифры
+        let output = s[i].padEnd(numberOfDigits, numberOfDigits); // добавляем нужное кол-во цифр
+      
+        if (output == 0) {
+            str += '';
+        } else {str += output;}
+ 
+}
+return str;
+        
+}
+
+
+
+console.log(explode("312"));
+
+
+
+    </script>
+</body>
+</html>

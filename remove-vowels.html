@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+var strings = ["bongo drums", "guitar", "flute", "double bass",
+               "xylophone","piano"];
+               console.log("strings is:" + typeof strings);
+string = strings.map(x=>x.replace( /[aeiou]/g, '' ));
+
+console.log("string is:" + typeof string);
+console.log(string);*/
+//let str = 
+
+function disemvowel(str) {
+  
+  str = str.split().map(x=>x.replace( /[aeiouAEIOU]/g, '' )).toString();
+  
+  return str;
+ 
+}
+
+
+
+let result = disemvowel("This website is for losers LOL!");
+
+console.log(result);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function nicknameGenerator(name){
+
+        if (name.length < 4) {
+            let error  = "Error: Name too short";
+            return error;
+        }
+    
+        const regexp = /[aeiouAEIOU]/g;
+
+         if (name[2].match(regexp)) {
+
+            name = name.substring(0, 4)
+         }
+
+else {
+        name = name.substring(0, 3)
+}
+
+        return name;
+    }
+
+
+
+
+    console.log(nicknameGenerator("Samantha"));
+
+
+
+    </script>
+</body>
+</html>
