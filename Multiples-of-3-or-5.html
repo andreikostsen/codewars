@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function solution(number){
+            
+            let sum = 0;
+            let modifiedFifth = 0;            
+            
+            if(number <= 3) {
+                return sum;
+            }
+            let thirds = ["0"];
+            let fifth = ["0"];
+            
+
+            for(i=1; i < number/3; i++){
+                thirds[i-1] = 3*i;
+               
+             }
+             
+             
+            for(i=1; i < number/5; i++){
+                
+                fifth[i-1] = 5*i;
+                
+
+               }
+
+            
+
+            for (i=0; i < fifth.length; i++){
+
+                if (thirds.includes(fifth[i])) {
+                    
+                    fifth.splice(i, 1);
+                   
+
+                }
+            }
+
+            let finalArray = thirds + "," + fifth;
+
+            let splittedFinalArray = finalArray.split(",");
+
+            
+            
+            for(i=0; i < splittedFinalArray.length; i++) {
+                
+                sum += parseInt(splittedFinalArray[i], 10);
+                
+               
+
+            } 
+            
+            
+
+            return sum;
+
+           
+
+        }
+
+
+        console.log(solution(20));
+
+
+    </script>
+</body>
+</html>
