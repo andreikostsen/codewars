@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function revrot(str, sz) {
+    
+
+        let finalChunk ='';
+
+        if (sz <= 0) {
+            return finalChunk ='';
+        }
+
+       let numbersOfChunks = Math.trunc(str.length/sz);
+
+       console.log(str + " includes " + numbersOfChunks+ " chunks");
+      
+       
+
+                for(let a = 0; a < numbersOfChunks; a++) {
+
+            let chunk = str.split('');
+            
+            let output = 0;
+            let outputChunk = '';
+            
+
+
+                for(let i = 0 + sz*a; i < sz*a+sz; i++) {
+                    console.log("i: " + i);
+                    let chunkPow = Math.pow(chunk[i], 3); 
+                    output += chunkPow;
+                    outputChunk += chunk[i]/*.join()*/;
+                    console.log(output);
+                    console.log("outputchunk: " + outputChunk);
+                    
+                }
+
+            if (output % 2 != 0) {
+
+                console.log(output + " не делится на 2");
+
+                chunkArray = outputChunk.split('');
+
+                let firstElement = chunkArray.shift() //берем первый элемент массива;  
+                
+
+
+                console.log("firstelement is: " + firstElement);
+                console.log("chunkArray without firstelement is: " + chunkArray);
+                
+                let rotatedChunk = chunkArray.join('') + firstElement;  //и добавить в конец методом push()
+                //rotate it to the left by one position
+
+                console.log("rotatedChunk is: " + rotatedChunk);
+
+
+                finalChunk += rotatedChunk; 
+
+            } else {
+                
+                console.log(output + " делится на 2");
+
+                chunkArray = outputChunk.split('');
+
+                let reversedChunk = chunkArray.reverse().join('');
+                //console.log(chunk.reverse().join(''));
+
+                finalChunk += reversedChunk;
+
+            }
+        
+
+
+        }
+
+
+
+
+
+       return finalChunk;
+      
+
+
+    }
+
+
+    revrot("563000655734469485", 4)
+
+
+
+    </script>
+</body>
+</html>
