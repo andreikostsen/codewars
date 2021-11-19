@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function head(Array){
+
+let inputArray = Array;
+
+ let outputArray = inputArray.shift();
+    return outputArray;
+}
+
+function tail(Array) {
+
+    let inputArray = Array;
+
+     inputArray.shift();
+
+     return inputArray;
+}
+
+
+function init(Array){
+
+    let inputArray = Array;
+
+    inputArray.pop();
+
+    return inputArray;
+
+}
+
+
+function last(Array){ 
+    
+    let inputArray = Array;
+
+        let outputArray = inputArray.pop();
+
+        return outputArray;
+
+}
+
+
+console.log("head: " + head([44]));
+console.log("tail: " + tail([44]));
+console.log("init: " + init([44])); //[1,2,3,4]
+console.log("last: " + last([44])); //[5]
+
+    </script>
+</body>
+</html>

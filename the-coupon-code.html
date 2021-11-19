@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+let result = false;
+
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+    
+if(enteredCode === correctCode) {
+
+    if(Date.parse(expirationDate) >= Date.parse(currentDate)) {
+
+        result = true;
+    }
+    
+    
+    
+}
+
+return result;
+
+}
+
+
+checkCoupon("123a", "123", "July 9, 2015", "July 10, 2015")  //===  true
+
+console.log(result);
+
+    </script>
+</body>
+</html>

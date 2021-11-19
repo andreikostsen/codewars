@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+function deepCount(a){
+    
+  let count = a.length;
+  console.log(a.length);
+
+function checkIfArray(x) {
+
+    if(Array.isArray(x)) {
+
+        let y = x.length;
+        return y;
+
+    }
+
+
+}
+
+
+  for(let i=0; i<=a.length; i++){
+
+    if (Array.isArray(a[i])) {
+
+       let innerArray = a[i];
+
+        checkIfArray(innerArray);
+
+
+        console.log("innerArray is: " + innerArray);
+        console.log(Array.isArray(innerArray[2]));
+        count += a[i].length;
+
+
+
+        for(let i=0; i<=innerArray.length; i++){
+
+            if (Array.isArray(innerArray[i])) {
+
+            let innerArray = innerArray[i];
+
+            count += innerArray.length;
+
+        }
+    }
+
+       /*for(let x=0; x<=a[i].length; x++) {
+
+            if (Array.isArray(a[i][x])) {
+            count += a[i][x].length;
+        }
+    }*/
+        
+    }
+
+  }
+
+  return count;
+
+}
+
+console.log(deepCount([1, 2, [3, 4, [5]]])); 
+
+/*const a = [1, 2, [3, 4, [5]]];
+
+
+console.log(a.length);
+console.log(a[2]);
+
+console.log("isArray:" + Array.isArray(a[1]));
+
+console.log("A2 length is: " + a[2].length);
+
+for (const [index, element] of a.entries())
+  
+
+
+console.log(index, element);
+
+// 0 'a'
+// 1 'b'
+// 2 'c'*/
+
+
+
+    </script>
+</body>
+</html>

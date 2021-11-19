@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+    
+function unluckyDays(year){
+  let friday13 = 0;
+
+    for(i=1; i < 13; i++ ) {
+
+        let inputDate =  "'" + i + ", 13, " + year + "'";
+
+        let date = new Date(inputDate);
+        let weekday = date.getDay();
+        
+
+        if(weekday ===5) {
+            friday13++;
+        }
+    }
+    
+
+    
+ return friday13;
+
+
+
+
+}
+
+
+ 
+console.log(unluckyDays(2022));
+
+/* 
+
+sunday => 0
+monday => 1
+thusday => 2
+wednesday => 3
+thursday => 4
+friday => 5
+suterday => 6
+*/
+
+
+
+    </script>
+</body>
+</html>
