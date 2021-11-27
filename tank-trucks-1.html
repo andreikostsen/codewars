@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function tankvol (h, d, vt) {
+  const m = h > d / 2 ? d -h : h
+  const r = d / 2
+  const H = vt / (Math.PI * Math.pow(r, 2))
+
+  console.log("cylinder height: " + H)
+  const a = 2 * Math.acos((r - m) / r)
+
+console.log("alphaAngle: " + a)
+
+  const s1 = (a * Math.pow(r, 2)) / 2
+
+  console.log("S1: " + s1)
+
+  const cathetus = 2 * Math.sqrt(Math.pow(r, 2) - Math.pow((r - m), 2))
+  const p2 = (r + r + cathetus) / 2
+  const s2 = Math.sqrt(p2 * (p2 - r) * (p2 - r) * (p2 - cathetus))
+  console.log("S2: " + s2)
+  const s = s1 - s2
+  console.log("s: " + s)
+
+  const v = s * H
+
+  console.log("v: " + v)
+
+  return Math.floor(h > d / 2 ? vt - v : v)
+}
+
+
+console.log(tankvol(40,120,3500));
+
+
+
+    </script>
+</body>
+</html>

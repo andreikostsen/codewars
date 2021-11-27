@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function reverseNumber(n) {
+
+
+    if(n == 0) {
+
+        return 0;
+    }
+
+  let arrayOfNumbers = n.toString().split("");
+
+  
+
+let b = arrayOfNumbers.length;
+
+ for (let i=0; i < b;  i++) {
+
+    
+
+        if(arrayOfNumbers[arrayOfNumbers.length - 1] == "0") {
+
+            arrayOfNumbers.pop();
+        }     
+        
+       
+    }
+  
+
+  if(arrayOfNumbers[0] == "-") {
+
+    arrayOfNumbers.shift();
+    arrayOfNumbers.push("-");
+
+  }
+
+  let reversedString = arrayOfNumbers.reverse().join("");
+
+  let reversedNumber =  parseInt(reversedString);
+
+  
+  return reversedNumber;
+
+
+}
+
+console.log(reverseNumber(0001));
+
+
+/*
+123 ->  321
+-456 -> -654
+1000 ->    1
+
+*/
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+//test(["this", "that"]);
+//test(["this", "that", "the other"]);
+var a = [];
+var str ='';
+
+function test(a) {
+    
+
+var str = a.length == 1 ? a[0] : a.slice(0, a.length - 1).join(", ") + " and " + a[a.length - 1];
+
+return str;
+
+}
+
+console.log(test(["this", "that", "the other"]));
+
+    </script>
+</body>
+</html>

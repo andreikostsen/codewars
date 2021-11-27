@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+let outputArray = [];
+
+function myLanguages(results) {
+
+    const sortable = Object.fromEntries(Object.entries(results).sort(([,a],[,b]) => b-a));
+
+
+
+for (const [key, value] of Object.entries(sortable)) {
+  if(`${value}` >= 60) {outputArray.push(`${key}`) };
+}
+
+
+
+
+
+   
+
+}
+
+
+
+
+
+    myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65});
+
+    console.log(outputArray);
+    
+
+    </script>
+
+
+
+
+</body>
+</html>

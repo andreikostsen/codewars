@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function formatDuration (seconds) {
+   
+    let humanFormat = "";
+    let years = 0;
+    let days = 0;
+    let hours = 0;
+    let minutes = 0;
+    let restOfSeconds = '';
+    let outputArray = [];
+
+
+    if(seconds === 0) {
+
+        return humanFormat = "now";
+    }
+
+    else if(seconds <=60) {
+
+        restOfSeconds = seconds;
+
+
+        if(restOfSeconds > 1){
+
+            restOfSeconds = restOfSeconds + " seconds";
+        outputArray.push(restOfSeconds);
+        } else {
+            restOfSeconds = restOfSeconds + " second";
+            outputArray.push(restOfSeconds);
+        }
+    }
+
+
+    else if(seconds < 3600){
+
+        
+    minutes = Math.trunc(seconds/60);
+    restOfSeconds = seconds - 60*minutes;
+
+        
+    if(minutes >1) {
+                minutes = minutes + " minutes";
+                outputArray.push(minutes);
+           
+
+            }
+            else if(minutes === 0) {
+                minutes = "";
+            }
+            else if(minutes === 1) {
+                minutes = minutes + " minute";
+                outputArray.push(minutes);
+           
+
+            }
+
+        if(restOfSeconds > 1){
+
+            restOfSeconds= restOfSeconds + " seconds";
+            
+           outputArray.push(restOfSeconds);
+
+    } 
+    else if(restOfSeconds === 0) {
+
+restOfSeconds = "";
+}
+else {
+        restOfSeconds = restOfSeconds + " second";
+        
+           outputArray.push(restOfSeconds);
+
+    }
+      
+           
+      
+
+    
+
+    }
+
+
+        
+
+
+        else if(seconds < 3600*24*365){
+
+
+        days = Math.trunc(seconds/(3600*24));
+
+        console.log(days);
+
+        hours = Math.trunc((seconds - 3600*24*days)/3600);
+        console.log(hours);
+        minutes = Math.trunc((seconds - 3600*24*days - 3600*hours)/60);
+        console.log(minutes);
+        restOfSeconds = seconds - 3600*24*days - 3600*hours - 60*minutes;
+        console.log(restOfSeconds);
+
+
+
+        if(days > 1) {
+
+            days = days + " days"
+            outputArray.push(days);
+
+        }
+
+            else if(days === 0){
+
+                days = "";
+
+            }
+
+            else if(days === 1) {
+
+                days = days + " day";
+                outputArray.push(days);
+            }
+
+        
+        if(hours > 1) {
+               hours = hours + " hours"
+               outputArray.push(hours);
+            }
+            else if(hours === 0) {
+                hours = "";
+            }
+            else if(hours === 1) {
+                hours = hours + " hour";
+                outputArray.push(hours);
+            }
+
+
+        if(minutes >1) {
+                minutes = minutes + " minutes";
+                outputArray.push(minutes);
+           
+
+            }
+            else if(minutes === 0) {
+                minutes = "";
+            }
+            else if(minutes === 1) {
+                minutes = minutes + " minute";
+                outputArray.push(minutes);
+           
+
+            }
+
+        if(restOfSeconds > 1){
+
+            restOfSeconds= restOfSeconds + " seconds";
+            
+           outputArray.push(restOfSeconds);
+
+        } 
+            else if(restOfSeconds === 0) {
+
+        restOfSeconds = "";
+        }
+        else {
+                restOfSeconds = restOfSeconds + " second";
+                
+                outputArray.push(restOfSeconds);
+
+            }
+
+     
+
+
+
+        }
+
+
+       else if(seconds >= 3600*24*365) {
+
+            years = Math.trunc(seconds/(3600*24*365));
+
+           
+
+            days = Math.trunc((seconds - 3600*24*365*years)/(3600*24));
+
+           
+
+            hours = Math.trunc((seconds - 3600*24*365*years - 3600*24*days)/3600);
+
+            
+
+            minutes = Math.trunc((seconds - 3600*24*365*years - 3600*24*days - 3600*hours)/60);
+
+          
+
+            restOfSeconds = seconds - 3600*24*365*years - 3600*24*days - 3600*hours - 60*minutes;
+
+            
+
+            if(years > 1) {
+                
+                years = years + " years";
+              
+            } else{
+                years = years + " year";
+            }
+
+            outputArray.push(years);
+
+
+            if(days > 1) {
+
+                days = days + " days"
+                outputArray.push(days);
+
+                }
+
+                else if(days === 0){
+
+                    days = "";
+
+                }
+
+                else if(days === 1) {
+
+                    days = days + " day";
+                    outputArray.push(days);
+                }
+
+
+            if(hours > 1) {
+               hours = hours + " hours";
+               outputArray.push(hours);
+            }
+            else if(hours === 0) {
+                hours = "";
+            }
+            else if(hours === 1) {
+                hours = hours + " hour";
+                outputArray.push(hours);
+            }
+
+
+            
+           
+
+            if(minutes >1) {
+                minutes = minutes + " minutes";
+                outputArray.push(minutes);
+            }
+            else if(minutes === 0) {
+                minutes = "";
+            }
+            else if(minutes === 1) {
+                minutes = minutes + " minute";
+                outputArray.push(minutes);
+            }
+
+            
+
+            if(restOfSeconds > 1) {
+                
+                restOfSeconds = restOfSeconds + " seconds";
+                outputArray.push(restOfSeconds);
+
+            }
+
+            else if(restOfSeconds === 0) {
+
+                restOfSeconds = "";
+            }
+
+            else if(restOfSeconds === 1){
+                restOfSeconds = restOfSeconds + " second"
+                outputArray.push(restOfSeconds);
+            }
+            
+         
+
+
+            
+           
+        }
+
+   
+        humanFormat = outputArray.length == 1 ? outputArray[0] : outputArray.slice(0, outputArray.length - 1).join(", ") + " and " + outputArray[outputArray.length - 1];
+  return humanFormat;
+}
+
+
+console.log(formatDuration(31536061)); 
+
+// 2  year  = 63072000 sec  
+// 2 hours  = 7200 sec
+// 7 min = 420 sec
+// 42 sec
+// total 63079662
+
+    </script>
+</body>
+</html>
